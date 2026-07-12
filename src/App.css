@@ -1,16 +1,75 @@
 .dashboard {
-  max-width: 1200px;
+  width: min(100% - 2rem, 1200px);
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 4rem 0;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #4f6b8a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .dashboard h1 {
   margin: 0;
-  font-size: 2.5rem;
   color: #1f2937;
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
-.dashboard p {
+.dashboard-intro {
+  max-width: 620px;
+  margin: 0.75rem 0 0;
+  color: #667085;
+  line-height: 1.6;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e3e8ee;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(31, 41, 55, 0.05);
+}
+
+.metric-card p {
+  margin: 0;
+  color: #667085;
+  font-size: 0.95rem;
+}
+
+.metric-card strong {
+  display: block;
   margin-top: 0.75rem;
-  color: #6b7280;
+  color: #1f2937;
+  font-size: 2rem;
+}
+
+@media (max-width: 800px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard {
+    width: min(100% - 1.5rem, 1200px);
+    padding: 2rem 0;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
 }
