@@ -1,6 +1,7 @@
 import "./App.css";
 import { projects } from "./data/projects";
 import { systemConditions } from "./data/systemConditions";
+import ProjectRow from "./components/ProjectRow";
 
 function App() {
   return (
@@ -103,36 +104,7 @@ function App() {
 
           <div className="project-list">
             {projects.map((project) => (
-              <article className="project-row" key={project.id}>
-                <div className="project-main">
-                  <div className="project-title-row">
-                    <h3>{project.name}</h3>
-                    <strong>{project.progress}%</strong>
-                  </div>
-
-                  <div className="project-details">
-                    <span>{project.category}</span>
-                    <span>{project.priority} priority</span>
-
-                    <span
-                      className={
-                        project.status === "Delayed"
-                          ? "project-status delayed"
-                          : "project-status"
-                      }
-                    >
-                      {project.status}
-                    </span>
-                  </div>
-
-                  <div className="progress-track project-progress">
-                    <div
-                      className="progress-fill"
-                      style={{ width: `${project.progress}%` }}
-                    ></div>
-                  </div>
-                </div>
-              </article>
+              <ProjectRow key={project.id} project={project} />
             ))}
           </div>
         </section>
