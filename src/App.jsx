@@ -1,9 +1,16 @@
+import { useState } from "react";
 import "./App.css";
 import { projects } from "./data/projects";
 import { systemConditions } from "./data/systemConditions";
 import ProjectRow from "./components/ProjectRow";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredProjects = projects.filter((project) =>
+    project.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="app">
       <div className="status-bar">
@@ -102,10 +109,26 @@ function App() {
             <button type="button">View all projects</button>
           </div>
 
+          <div className="project-search">
+            <label htmlFor="project-search">Search projects</label>
+
+            <input
+              id="project-search"
+              type="search"
+              placeholder="Search by project name"
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+            />
+          </div>
+
           <div className="project-list">
-            {projects.map((project) => (
-              <ProjectRow key={project.id} project={project} />
-            ))}
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project) => (
+                <ProjectRow key={project.id} project={project} />
+              ))
+            ) : (
+              <p className="no-results">No projects found.</p>
+            )}
           </div>
         </section>
       </main>
