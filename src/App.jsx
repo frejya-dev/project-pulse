@@ -1,50 +1,6 @@
 import "./App.css";
-
-const projects = [
-  {
-    id: 1,
-    name: "Red Line Signal Modernization",
-    category: "Rail",
-    status: "On Schedule",
-    priority: "High",
-    progress: 68,
-  },
-  {
-    id: 2,
-    name: "Harbor Bridge Seismic Retrofit",
-    category: "Bridge",
-    status: "Delayed",
-    priority: "High",
-    progress: 45,
-  },
-  {
-    id: 3,
-    name: "Olympic Corridor Bus Priority",
-    category: "Transit",
-    status: "On Schedule",
-    priority: "Medium",
-    progress: 82,
-  },
-];
-
-const systemConditions = [
-  {
-    name: "Transit Network",
-    status: "Stable",
-  },
-  {
-    name: "Signal Systems",
-    status: "Monitor",
-  },
-  {
-    name: "Road Operations",
-    status: "Stable",
-  },
-  {
-    name: "Bridge Assets",
-    status: "Stable",
-  },
-];
+import { projects } from "./data/projects";
+import { systemConditions } from "./data/systemConditions";
 
 function App() {
   return (
@@ -74,8 +30,8 @@ function App() {
           <article className="overview-panel">
             <div className="section-heading">
               <div>
-                <p className="section-label">Transportation network</p>
-                <h2>Current performance</h2>
+                <p className="section-label">Transportation Network</p>
+                <h2>Current Performance</h2>
               </div>
 
               <span className="reporting-period">July 2026</span>
@@ -114,8 +70,8 @@ function App() {
           </article>
 
           <aside className="conditions-panel">
-            <p className="section-label">Current conditions</p>
-            <h2>System status</h2>
+            <p className="section-label">Current Conditions</p>
+            <h2>System Status</h2>
 
             <div className="conditions-list">
               {systemConditions.map((system) => (
@@ -138,8 +94,8 @@ function App() {
         <section className="projects-section">
           <div className="projects-header">
             <div>
-              <p className="section-label">Capital improvement program</p>
-              <h2>Active projects</h2>
+              <p className="section-label">Capital Improvement Program</p>
+              <h2>Active Projects</h2>
             </div>
 
             <button type="button">View all projects</button>
