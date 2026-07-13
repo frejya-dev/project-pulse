@@ -3,7 +3,7 @@ import "./App.css";
 const projects = [
   {
     id: 1,
-    name: "Downtown Rail Modernization",
+    name: "Red Line Signal Modernization",
     category: "Rail",
     status: "On Schedule",
     priority: "High",
@@ -11,7 +11,7 @@ const projects = [
   },
   {
     id: 2,
-    name: "Harbor Bridge Rehabilitation",
+    name: "Harbor Bridge Seismic Retrofit",
     category: "Bridge",
     status: "Delayed",
     priority: "High",
@@ -19,8 +19,8 @@ const projects = [
   },
   {
     id: 3,
-    name: "Smart Traffic Signal Upgrade",
-    category: "Traffic",
+    name: "Olympic Corridor Bus Priority",
+    category: "Transit",
     status: "On Schedule",
     priority: "Medium",
     progress: 82,
@@ -28,10 +28,22 @@ const projects = [
 ];
 
 const systemConditions = [
-  { name: "Transit Network", status: "Stable" },
-  { name: "Bridge Systems", status: "Monitor" },
-  { name: "Road Operations", status: "Stable" },
-  { name: "Utility Assets", status: "Stable" },
+  {
+    name: "Transit Network",
+    status: "Stable",
+  },
+  {
+    name: "Signal Systems",
+    status: "Monitor",
+  },
+  {
+    name: "Road Operations",
+    status: "Stable",
+  },
+  {
+    name: "Bridge Assets",
+    status: "Stable",
+  },
 ];
 
 function App() {
@@ -42,17 +54,19 @@ function App() {
 
         <div className="system-status">
           <span className="status-dot"></span>
-          System operational
+          System operational · Updated 2 min ago
         </div>
       </div>
 
       <main className="dashboard">
         <header className="dashboard-header">
           <p className="eyebrow">Operations Overview</p>
+
           <h1>Infrastructure Operations</h1>
+
           <p className="dashboard-intro">
-            Monitor active projects, delivery performance, system conditions,
-            and operational alerts.
+            Monitor transportation projects, delivery performance, network
+            conditions, and operational alerts.
           </p>
         </header>
 
@@ -60,7 +74,7 @@ function App() {
           <article className="overview-panel">
             <div className="section-heading">
               <div>
-                <p className="section-label">Network overview</p>
+                <p className="section-label">Transportation network</p>
                 <h2>Current performance</h2>
               </div>
 
@@ -107,6 +121,7 @@ function App() {
               {systemConditions.map((system) => (
                 <div className="condition-row" key={system.name}>
                   <span>{system.name}</span>
+
                   <span
                     className={`condition-status ${
                       system.status === "Monitor" ? "monitor" : ""
@@ -123,7 +138,7 @@ function App() {
         <section className="projects-section">
           <div className="projects-header">
             <div>
-              <p className="section-label">Project delivery</p>
+              <p className="section-label">Capital improvement program</p>
               <h2>Active projects</h2>
             </div>
 
@@ -142,6 +157,7 @@ function App() {
                   <div className="project-details">
                     <span>{project.category}</span>
                     <span>{project.priority} priority</span>
+
                     <span
                       className={
                         project.status === "Delayed"
