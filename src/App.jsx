@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "./App.css";
+
+import ProjectRow from "./components/ProjectRow";
+import DeliveryChart from "./components/DeliveryChart";
+
 import { projects } from "./data/projects";
 import { systemConditions } from "./data/systemConditions";
-import ProjectRow from "./components/ProjectRow";
+import { deliveryTrend } from "./data/deliveryTrend";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -106,6 +110,8 @@ function App() {
             </div>
           </aside>
         </section>
+
+        <DeliveryChart data={deliveryTrend} />
 
         <section className="projects-section">
           <div className="projects-header">
