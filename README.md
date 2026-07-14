@@ -1,16 +1,57 @@
-# React + Vite
+# Project Pulse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Pulse is a fictional infrastructure operations dashboard built with React.
 
-Currently, two official plugins are available:
+I wanted to build something that felt closer to the software engineering teams actually use instead of another weather app. The dashboard brings together project tracking, operational status, search and reporting in a clean interface inspired by transportation and engineering organizations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Project Pulse Dashboard](./screenshot.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Infrastructure operations dashboard
+- Project status overview
+- Search projects by name
+- Filter projects by status
+- Monthly delivery trend chart
+- Responsive layout
+- Component-based React architecture
 
-## Expanding the ESLint configuration
+## Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- JavaScript (ES6+)
+- CSS
+- Recharts
+
+## Why I Built This
+
+I'm expanding my frontend portfolio with projects that reflect the kind of applications I'd like to build professionally.
+
+This project has been a way to practice breaking a larger interface into reusable React components, managing application state with hooks, organizing project data, and building a clean dashboard UI that feels realistic instead of purely academic.
+
+## What I Practiced
+
+- React components
+- Props
+- State management with `useState`
+- Conditional rendering
+- Array filtering and mapping
+- Organizing data into separate modules
+- Responsive CSS
+- Data visualization with Recharts
+
+## Future Ideas
+
+Some features I'd like to add include:
+
+- Sorting projects
+- Dark mode
+- Interactive map view
+- Project detail pages
+- Live API data instead of static JSON
+- Authentication and user roles
+
+---
+
+Built by Frejya Lindh as part of my frontend development portfolio.
