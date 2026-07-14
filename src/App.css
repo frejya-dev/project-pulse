@@ -368,4 +368,37 @@
   .project-search {
     padding: 1.4rem;
   }
+}.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.filter-buttons button {
+  padding: 0.55rem 1rem;
+  color: var(--text);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-buttons button:hover {
+  border-color: var(--blue);
+}
+
+.filter-buttons button.active {
+  color: #ffffff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+@media (max-width: 560px) {
+  .filter-buttons {
+    padding: 1.4rem 1.4rem 0;
+  }
 }

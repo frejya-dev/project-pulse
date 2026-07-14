@@ -6,10 +6,18 @@ import ProjectRow from "./components/ProjectRow";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [statusFilter, setStatusFilter] = useState("All");
 
-  const filteredProjects = projects.filter((project) =>
-    project.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredProjects = projects.filter((project) => {
+    const matchesSearch = project.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+    const matchesStatus =
+      statusFilter === "All" || project.status === statusFilter;
+
+    return matchesSearch && matchesStatus;
+  });
 
   return (
     <div className="app">
@@ -107,6 +115,32 @@ function App() {
             </div>
 
             <button type="button">View all projects</button>
+          </div>
+
+          <div className="filter-buttons" aria-label="Filter projects by status">
+            <button
+              type="button"
+              className={statusFilter === "All" ? "active" : ""}
+              onClick={() => setStatusFilter("All")}
+            >
+              All
+            </button>
+
+            <button
+              type="button"
+              className={statusFilter === "On Schedule" ? "active" : ""}
+              onClick={() => setStatusFilter("On Schedule")}
+            >
+              On Schedule
+            </button>
+
+            <button
+              type="button"
+              className={statusFilter === "Delayed" ? "active" : ""}
+              onClick={() => setStatusFilter("Delayed")}
+            >
+              Delayed
+            </button>
           </div>
 
           <div className="project-search">
