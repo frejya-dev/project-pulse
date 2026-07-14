@@ -10,7 +10,7 @@ Project data is currently static and stored locally so the focus stays on React 
 
 Deployed on AWS Amplify:
 
-https://YOUR-AMPLIFY-URL.amplifyapp.com
+[https://YOUR-AMPLIFY-URL.amplifyapp.com](https://main.d2xurhc2vplg4w.amplifyapp.com/)
 
 ![Project Pulse Dashboard](./screenshot.png)
 
